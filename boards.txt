@@ -30,7 +30,7 @@ arancinoVolante.upload.maximum_data_size=237568
 # Build
 arancinoVolante.build.mcu=cortex-m4
 arancinoVolante.build.f_cpu=64000000
-arancinoVolante.build.board=NRF52840_ARANCINO_VOLANTE
+arancinoVolante.build.board=ARANCINO_VOLANTE
 arancinoVolante.build.core=nRF5
 arancinoVolante.build.variant=arancino_volante
 arancinoVolante.build.usb_manufacturer="smartme.io"
