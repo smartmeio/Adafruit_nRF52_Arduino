@@ -2,6 +2,62 @@ menu.softdevice=SoftDevice
 menu.debug=Debug
 menu.debug_output=Debug Output
 
+# ----------------------------------
+# Arancino Volante
+# ----------------------------------
+arancinoVolante.name=Arancino Volante
+
+# VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
+arancinoVolante.vid.0=0x239A
+arancinoVolante.pid.0=0x8029
+arancinoVolante.vid.1=0x239A
+arancinoVolante.pid.1=0x0029
+arancinoVolante.vid.2=0x239A
+arancinoVolante.pid.2=0x002A
+arancinoVolante.vid.3=0x239A
+arancinoVolante.pid.3=0x802A
+
+# Upload
+arancinoVolante.bootloader.tool=bootburn
+arancinoVolante.upload.tool=nrfutil
+arancinoVolante.upload.protocol=nrfutil
+arancinoVolante.upload.use_1200bps_touch=true
+arancinoVolante.upload.wait_for_upload_port=true
+#arancinoVolante.upload.maximum_size=815104
+arancinoVolante.upload.maximum_size=409600
+arancinoVolante.upload.maximum_data_size=237568
+
+# Build
+arancinoVolante.build.mcu=cortex-m4
+arancinoVolante.build.f_cpu=64000000
+arancinoVolante.build.board=NRF52840_ARANCINO_VOLANTE
+arancinoVolante.build.core=nRF5
+arancinoVolante.build.variant=arancino_volante
+arancinoVolante.build.usb_manufacturer="smartme.io"
+arancinoVolante.build.usb_product="Arancino Volante"
+arancinoVolante.build.extra_flags=-DNRF52840_XXAA {build.flags.usb} -DUSE_TINYUSB
+arancinoVolante.build.ldscript=nrf52840_s140_v6.ld
+arancinoVolante.build.vid=0x239A
+arancinoVolante.build.pid=0x8029
+
+# SofDevice Menu
+arancinoVolante.menu.softdevice.s140v6=S140 6.1.1
+arancinoVolante.menu.softdevice.s140v6.build.sd_name=s140
+arancinoVolante.menu.softdevice.s140v6.build.sd_version=6.1.1
+arancinoVolante.menu.softdevice.s140v6.build.sd_fwid=0xB6
+
+# Debug Menu
+#feather52840.menu.debug.l0=Level 0 (Release)
+#feather52840.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+#feather52840.menu.debug.l1=Level 1 (Error Message)
+#feather52840.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+
+#feather52840.menu.debug.l2=Level 2 (Full Debug)
+#feather52840.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+#feather52840.menu.debug.l3=Level 3 (Segger SystemView)
+#feather52840.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+#feather52840.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
 # -----------------------------------
 # Adafruit Feather nRF52832
 # -----------------------------------
