@@ -8,14 +8,14 @@ menu.debug_output=Debug Output
 arancinoVolante.name=Arancino Volante
 
 # VID/PID for bootloader with/without UF2, Arduino + Circuitpython App
-arancinoVolante.vid.0=0x239A
-arancinoVolante.pid.0=0x8029
-arancinoVolante.vid.1=0x239A
-arancinoVolante.pid.1=0x0029
-arancinoVolante.vid.2=0x239A
-arancinoVolante.pid.2=0x002A
-arancinoVolante.vid.3=0x239A
-arancinoVolante.pid.3=0x802A
+arancinoVolante.vid.0=0x1915
+arancinoVolante.pid.0=0x521F
+arancinoVolante.vid.1=0x1915
+arancinoVolante.pid.1=0x521F
+arancinoVolante.vid.2=0x1915
+arancinoVolante.pid.2=0x521F
+arancinoVolante.vid.3=0x1915
+arancinoVolante.pid.3=0x521F
 
 # Upload
 arancinoVolante.bootloader.tool=bootburn
@@ -37,8 +37,8 @@ arancinoVolante.build.usb_manufacturer="smartme.io"
 arancinoVolante.build.usb_product="Arancino Volante"
 arancinoVolante.build.extra_flags=-DNRF52840_XXAA {build.flags.usb} -DUSE_TINYUSB -DUSEFREERTOS
 arancinoVolante.build.ldscript=nrf52840_s140_v6.ld
-arancinoVolante.build.vid=0x239A
-arancinoVolante.build.pid=0x8029
+arancinoVolante.build.vid=0x1915
+arancinoVolante.build.pid=0x521F
 
 # SofDevice Menu
 arancinoVolante.menu.softdevice.s140v6=S140 6.1.1
