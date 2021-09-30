@@ -46,7 +46,7 @@ This require existing bootloader version is at least 0.4.0:
 To upgrade to the latest Bootloader + Softdevice using the serial port within Arduino IDE.
 
 - Select `Tools -> Board -> Arancino nRF52 Board -> Arancino Volante`
-- Select `Tools -> Programmer -> Bootloader DFU for Bluefruit nRF52`
+- Select `Tools -> Programmer -> Bootloader DFU for Arancino nRF52`
 - Select `Tools -> Burn Bootloader`
 - **WAIT** until the process complete ~30 seconds
 
