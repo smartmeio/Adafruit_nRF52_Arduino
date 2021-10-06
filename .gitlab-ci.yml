@@ -75,6 +75,8 @@ push:
 #######    Package Release    #######
 package_release:
     stage: package
+    variables:
+      GIT_SUBMODULE_STRATEGY: recursive
 
     script:
         # create some variables into temp folder
