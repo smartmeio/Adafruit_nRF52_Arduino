@@ -35,19 +35,9 @@ int Stream::timedRead()
   do {
     c = read();
     if (c >= 0) return c;
-    #if  defined(USEFREERTOS)
-    if (xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED)
-    {
-      xTaskResumeAll();
-    }
-    #endif
+
     yield(); // running TinyUSB task
-    #if  defined(USEFREERTOS)
-    if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
-    {
-      vTaskSuspendAll();
-    }
-    #endif
+
   } while(millis() - _startMillis < _timeout);
   return -1;     // -1 indicates timeout
 }
