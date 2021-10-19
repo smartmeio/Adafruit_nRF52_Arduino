@@ -46,6 +46,11 @@ arancinoVolante.menu.softdevice.s140v6.build.sd_name=s140
 arancinoVolante.menu.softdevice.s140v6.build.sd_version=6.1.1
 arancinoVolante.menu.softdevice.s140v6.build.sd_fwid=0xB6
 
+# USB STACK
+arancinoVolante.menu.usbstack.arduino=Arduino
+arancinoVolante.menu.usbstack.tinyusb=TinyUSB
+arancinoVolante.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+
 # Debug Menu
 #feather52840.menu.debug.l0=Level 0 (Release)
 #feather52840.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
