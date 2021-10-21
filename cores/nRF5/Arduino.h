@@ -85,6 +85,9 @@ void resumeLoop(void);
 #ifndef ARANCINO_CORE_VERSION
 #define ARANCINO_CORE_VERSION "0.0.0"
 #endif
+#ifndef MCU_FAMILY
+#define MCU_FAMILY "NRF52"
+#endif
 
 // undefine stdlib's abs if encountered
 #ifdef abs
