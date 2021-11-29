@@ -128,14 +128,14 @@ recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
 recipe.output.tmp_file={build.project_name}.hex
 recipe.output.save_file={build.project_name}.{build.variant}.hex
 
-#***************************************************
+#*************************************************************
 # adafruit-nrfutil for uploading
 # https://github.com/adafruit/Adafruit_nRF52_nrfutil
-# pre-built binaries are provided for macos and windows
-#***************************************************
+# pre-built binaries are provided for macos, windows and linux
+#*************************************************************
+tools.nrfutil.path={runtime.tools.nrfutil.path}
 tools.nrfutil.cmd=adafruit-nrfutil
-tools.nrfutil.cmd.windows={runtime.platform.path}/tools/adafruit-nrfutil/win32/adafruit-nrfutil.exe
-tools.nrfutil.cmd.macosx={runtime.platform.path}/tools/adafruit-nrfutil/macos/adafruit-nrfutil
+tools.nrfutil.cmd.windows=adafruit-nrfutil.exe
 
 tools.nrfutil.upload.params.verbose=--verbose
 tools.nrfutil.upload.params.quiet=
