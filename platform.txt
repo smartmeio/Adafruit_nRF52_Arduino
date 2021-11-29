@@ -134,8 +134,8 @@ recipe.output.save_file={build.project_name}.{build.variant}.hex
 # pre-built binaries are provided for macos, windows and linux
 #*************************************************************
 tools.nrfutil.path={runtime.tools.nrfutil.path}
-tools.nrfutil.cmd=adafruit-nrfutil
-tools.nrfutil.cmd.windows=adafruit-nrfutil.exe
+tools.nrfutil.cmd={runtime.tools.nrfutil.path}/adafruit-nrfutil
+tools.nrfutil.cmd.windows={runtime.tools.nrfutil.path}/adafruit-nrfutil.exe
 
 tools.nrfutil.upload.params.verbose=--verbose
 tools.nrfutil.upload.params.quiet=
