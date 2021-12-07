@@ -35,7 +35,9 @@ int Stream::timedRead()
   do {
     c = read();
     if (c >= 0) return c;
+
     yield(); // running TinyUSB task
+
   } while(millis() - _startMillis < _timeout);
   return -1;     // -1 indicates timeout
 }

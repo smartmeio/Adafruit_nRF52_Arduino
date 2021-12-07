@@ -1,7 +1,7 @@
 #**********************************************
 # Jlink with nrfjprog
 #**********************************************
-nrfjprog.name=J-Link for Bluefruit nRF52
+nrfjprog.name=J-Link for Arancino nRF52
 nrfjprog.program.tool=bootburn
 nrfjprog.program.cmd={runtime.tools.nrfjprog.path}/nrfjprog
 nrfjprog.program.cmd.windows={runtime.tools.nrfjprog.path}/nrfjprog.exe
@@ -20,7 +20,7 @@ nrfjprog.program.pattern="{program.cmd}" --reset --program "{build.path}/{build.
 #**********************************************
 # adafruit-nrfutil
 #**********************************************
-nrfutil_boot.name=Bootloader DFU for Bluefruit nRF52
+nrfutil_boot.name=Bootloader DFU for Arancino nRF52
 nrfutil_boot.program.tool=bootburn
 nrfutil_boot.program.cmd=adafruit-nrfutil
 nrfutil_boot.program.cmd.windows={runtime.platform.path}/tools/adafruit-nrfutil/win32/adafruit-nrfutil.exe
@@ -32,4 +32,4 @@ nrfutil_boot.program.burn_pattern={program.cmd} --verbose dfu serial -pkg "{boot
 # Remind user to select Jlink when used to upload sketch
 nrfutil_boot.program.params.quiet=
 nrfutil_boot.program.params.verbose=
-nrfutil_boot.program.pattern=echo Please select <J-Link for Bluefruit nRF52> as programmer
+nrfutil_boot.program.pattern=echo Please select <J-Link for Arancino nRF52> as programmer

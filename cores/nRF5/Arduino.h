@@ -82,19 +82,26 @@ void resumeLoop(void);
 #include "wiring_shift.h"
 #include "WInterrupts.h"
 
+#ifndef ARANCINO_CORE_VERSION
+#define ARANCINO_CORE_VERSION "0.0.0"
+#endif
+#ifndef MCU_FAMILY
+#define MCU_FAMILY "NRF52"
+#endif
+
 // undefine stdlib's abs if encountered
 #ifdef abs
 #undef abs
 #endif // abs
 
 #ifdef __cplusplus
-  template<class T, class L> 
+  template<class T, class L>
   auto min(const T& a, const L& b) -> decltype((b < a) ? b : a)
   {
     return (b < a) ? b : a;
   }
 
-  template<class T, class L> 
+  template<class T, class L>
   auto max(const T& a, const L& b) -> decltype((b < a) ? b : a)
   {
     return (a < b) ? b : a;
