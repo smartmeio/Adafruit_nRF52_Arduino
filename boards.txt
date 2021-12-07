@@ -52,13 +52,13 @@ arancinoVolante.menu.usbstack.tinyusb=TinyUSB
 arancinoVolante.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
 
 # Debug Menu
-#feather52840.menu.debug.l0=Level 0 (Release)
-#feather52840.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
-#feather52840.menu.debug.l1=Level 1 (Error Message)
-#feather52840.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+arancinoVolante.menu.debug.l0=Level 0 (Release)
+arancinoVolante.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+arancinoVolante.menu.debug.l1=Level 1 (Error Message)
+arancinoVolante.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
 
-#feather52840.menu.debug.l2=Level 2 (Full Debug)
-#feather52840.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
-#feather52840.menu.debug.l3=Level 3 (Segger SystemView)
-#feather52840.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
-#feather52840.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+arancinoVolante.menu.debug.l2=Level 2 (Full Debug)
+arancinoVolante.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+arancinoVolante.menu.debug.l3=Level 3 (Segger SystemView)
+arancinoVolante.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+arancinoVolante.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
