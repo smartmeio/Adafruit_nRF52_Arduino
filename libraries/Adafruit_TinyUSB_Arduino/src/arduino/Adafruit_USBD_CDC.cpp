@@ -259,6 +259,10 @@ void tud_cdc_line_state_cb(uint8_t instance, bool dtr, bool rts) {
       if (coding.bit_rate == 1200) {
         TinyUSB_Port_EnterDFU();
       }
+      // reset
+      if (coding.bit_rate == 300) {
+        NVIC_SystemReset();
+      }
     }
   }
 }
