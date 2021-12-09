@@ -78,6 +78,8 @@ $ nrfjprog -e -f nrf52
 $ nrfjprog --program arancino_volante_bootloader_s140_6.1.1.hex -f nrf52
 $ nrfjprog --reset -f nrf52
 ```
+## Notes
+**Important**: Since the introduction of FreeRTOS in the core, the code in the ``` loop() ```  function may not work properly, so we suggest implementing your code as a task.
 
 ## Credits
 
