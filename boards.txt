@@ -62,3 +62,11 @@ arancinoVolante.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
 arancinoVolante.menu.debug.l3=Level 3 (Segger SystemView)
 arancinoVolante.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
 arancinoVolante.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+# Debug Output Menu
+arancinoVolante.menu.debug_output.serial=Serial
+arancinoVolante.menu.debug_output.serial.build.logger_flags=-DCFG_LOGGER=0
+arancinoVolante.menu.debug_output.serial1=Serial1
+arancinoVolante.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
+arancinoVolante.menu.debug_output.rtt=Segger RTT
+arancinoVolante.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
