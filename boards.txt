@@ -1,4 +1,5 @@
 menu.softdevice=SoftDevice
+menu.usbstack=USB Stack
 menu.debug=Debug
 menu.debug_output=Debug Output
 
@@ -56,7 +57,6 @@ arancinoVolante.menu.debug.l0=Level 0 (Release)
 arancinoVolante.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
 arancinoVolante.menu.debug.l1=Level 1 (Error Message)
 arancinoVolante.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
-
 arancinoVolante.menu.debug.l2=Level 2 (Full Debug)
 arancinoVolante.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
 arancinoVolante.menu.debug.l3=Level 3 (Segger SystemView)
