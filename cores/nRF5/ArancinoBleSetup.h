@@ -1,12 +1,4 @@
 #include <bluefruit.h>
-#include <Adafruit_LittleFS.h>
-#include <InternalFileSystem.h>
-// BLE Service
-BLEDfu  bledfu;  // OTA DFU service
-BLEDis  bledis;  // device information
-BLEUart bleuart; // uart over ble
-
-
 
 void connect_callback(uint16_t conn_handle)
 {
@@ -23,7 +15,7 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason)
   (void) reason;
 }
 
-void startAdv(void)
+void startAdv(BLEUart& bleuart)
 {
   Bluefruit.Advertising.addFlags(BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE);
   Bluefruit.Advertising.addTxPower();
@@ -35,7 +27,7 @@ void startAdv(void)
   Bluefruit.Advertising.start(0);                // 0 = Don't stop advertising after n seconds  
 }
 
-void ArancinoBleSetup(){
+void ArancinoBleSetup(BLEUart& bleuart, BLEDis& bledis, BLEDfu& bledfu){
   Bluefruit.autoConnLed(true);
   Bluefruit.configPrphBandwidth(BANDWIDTH_MAX);
   Bluefruit.begin();
@@ -51,10 +43,6 @@ void ArancinoBleSetup(){
   
   bleuart.begin();
 
-  startAdv();
+  startAdv(bleuart);
 
-}
-
-BLEUart* getBleSerialAddr(){
-    return &bleuart;
 }
