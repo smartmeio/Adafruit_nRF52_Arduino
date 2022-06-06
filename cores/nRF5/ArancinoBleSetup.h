@@ -13,6 +13,7 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason)
 {
   (void) conn_handle;
   (void) reason;
+  NVIC_SystemReset();
 }
 
 void startAdv(BLEUart& bleuart)
@@ -31,7 +32,7 @@ void ArancinoBleSetup(BLEUart& bleuart, BLEDis& bledis, BLEDfu& bledfu){
   Bluefruit.autoConnLed(true);
   Bluefruit.configPrphBandwidth(BANDWIDTH_MAX);
   Bluefruit.begin();
-  Bluefruit.setTxPower(4);    
+  Bluefruit.setTxPower(4);
   Bluefruit.Periph.setConnectCallback(connect_callback);
   Bluefruit.Periph.setDisconnectCallback(disconnect_callback);
 

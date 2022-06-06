@@ -99,3 +99,26 @@ const char* getMcuUniqueID(void)
   return serial_str;
 }
 
+const char* getMacAddr(){
+  //Return the 48 bit MAC addr
+  uint8_t mac[6];
+  mac[0] = (NRF_FICR-> DEVICEADDR[1] >> 8) | 0xc0;
+  mac[1] = NRF_FICR-> DEVICEADDR[1];
+  mac[2] = NRF_FICR-> DEVICEADDR[0] >> 24;
+  mac[3] = NRF_FICR-> DEVICEADDR[0] >> 16;
+  mac[4] = NRF_FICR-> DEVICEADDR[0] >> 8;
+  mac[5] = NRF_FICR-> DEVICEADDR[0];
+
+  static char buf[12];
+
+  for (unsigned int i = 0; i<6; i++)
+    {
+        byte nib1 = (mac[i] >> 4) & 0x0F;
+        byte nib2 = (mac[i] >> 0) & 0x0F;
+        buf[i*2+0] = nib1  < 0xA ? '0' + nib1  : 'A' + nib1  - 0xA;
+        buf[i*2+1] = nib2  < 0xA ? '0' + nib2  : 'A' + nib2  - 0xA;
+    }
+    buf[12] = '\0';
+
+    return buf;
+}
