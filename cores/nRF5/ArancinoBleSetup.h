@@ -40,9 +40,9 @@ void ArancinoBleSetup(BLEUart& bleuart, BLEDis& bledis, BLEDfu& bledfu){
 
   bledis.setManufacturer("SmartMe.IO");
   bledis.setModel("Arancino Volante");
-  bledis.begin();
   
   bleuart.begin();
+  bledis.begin();
 
   startAdv(bleuart);
 
