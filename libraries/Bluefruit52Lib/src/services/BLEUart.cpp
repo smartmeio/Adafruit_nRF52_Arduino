@@ -75,6 +75,20 @@ BLEUart::BLEUart(uint16_t fifo_depth)
   _tx_buffered   = false;
 }
 
+BLEUart::BLEUart(const uint8_t* uuid_service, const uint8_t* uuid_rx, const uint8_t* uuid_tx, uint16_t fifo_depth)
+  : BLEService(uuid_service), _txd(uuid_tx), _rxd(uuid_rx)
+{
+  _rx_fifo       = NULL;
+  _rx_fifo_depth = fifo_depth;
+
+  _rx_cb         = NULL;
+  _notify_cb     = NULL;
+  _overflow_cb   = NULL;
+
+  _tx_fifo       = NULL;
+  _tx_buffered   = false;
+}
+
 // Destructor
 BLEUart::~BLEUart()
 {
