@@ -77,19 +77,7 @@ void yield(void)
 #ifdef USE_TINYUSB
   TinyUSB_Device_FlushCDC();
 #endif
-#if  defined(USEFREERTOS)
-  if (xTaskGetSchedulerState() == taskSCHEDULER_SUSPENDED)
-  {
-    xTaskResumeAll();
-  }
-#endif
   taskYIELD();
-#if  defined(USEFREERTOS)
-  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
-  {
-    vTaskSuspendAll();
-  }
-#endif
 }
 
 void vApplicationStackOverflowHook( TaskHandle_t xTask, char *pcTaskName )
