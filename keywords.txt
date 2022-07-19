@@ -52,6 +52,7 @@ dbgPrintVersion	KEYWORD2
 
 startLoop	KEYWORD2
 setPins	KEYWORD2
+ArancinoBleSetup	KEYWORD2
 
 
 #######################################
