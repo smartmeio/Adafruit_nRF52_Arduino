@@ -1,60 +1,22 @@
-# Arduino Core for Adafruit Bluefruit nRF52 Boards
+# Arduino Core for Arancino nRF52 Boards
 
-[![Build Status](https://github.com/adafruit/Adafruit_nRF52_Arduino/workflows/Build/badge.svg)](https://github.com/adafruit/Adafruit_nRF52_Arduino/actions)
+Following board are included:
 
-This repository contains the Arduino BSP for Adafruit Bluefruit nRF52 series:
-
-- [Adafruit CLUE nRF52840](https://www.adafruit.com/product/4500)
-- [Adafruit Circuit Playground Bluefruit](https://www.adafruit.com/product/4333)
-- [Adafruit Feather nRF52832](https://www.adafruit.com/product/3406)
-- [Adafruit Feather nRF52840 Express](https://www.adafruit.com/product/4062)
-- [Adafruit Feather nRF52840 Sense](https://www.adafruit.com/product/4516)
-- [Adafruit ItsyBitsy nRF52840 Express](https://www.adafruit.com/product/4481)
-- [Adafruit LED Glasses Driver nRF52840](https://www.adafruit.com/product/5217)
-- Adafruit Metro nRF52840 Express
-- [Raytac MDBT50Q-RX Dongle](https://www.adafruit.com/product/5199)
-
-Following boards are also included but are not officially supported:
-
-- [Nordic nRF52840DK PCA10056](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)
-- [Particle Xenon](https://store.particle.io/products/xenon)
+- [Arancino Volante](https://arancino.cc)
 
 ## BSP Installation
 
 There are two methods that you can use to install this BSP. We highly recommend the first option unless you wish to participate in active development of this codebase via Github.
 
-### Recommended: Adafruit nRF52 BSP via the Arduino Board Manager
+### Arancino nRF52 BSP via the Arduino Board Manager
 
- 1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) (At least v1.6.12)
+ 1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software)
  2. Start the Arduino IDE
  3. Go into Preferences
- 4. Add https://adafruit.github.io/arduino-board-index/package_adafruit_index.json as an 'Additional Board Manager URL'
- 5. Restart the Arduino IDE
- 6. Open the Boards Manager from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit'
- 7. Once the BSP is installed, select 'Adafruit Feather nRF52840 Express' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
+ 4. Add https://git.smartme.io/smartme.io/arancino/arduino/smartmeio-package-index/raw/dev/package_smartmeio_index.json as an 'Additional Board Manager URL'
+ 5. Open the Boards Manager from the Tools -> Board -> Board Manager menu and install 'Arancino nRF52 Boards'
+ 6. Once the BSP is installed, select 'Arancino Volante' from the Tools -> Board -> Arancino nRF52 Boards menu, which will update your system config to use the right compiler and settings for the nRF52.
 
-### Optional (Core Development): Adafruit nRF52 BSP via git
-
- 1. Install BSP via Board Manager as above to install compiler & tools.
- 2. Delete the core folder `nrf52` installed by Board Manager in Adruino15, depending on your OS. It could be
-  * macOS  : `~/Library/Arduino15/packages/adafruit/hardware/nrf52`
-  * Linux  : `~/.arduino15/packages/adafruit/hardware/nrf52`
-  * Windows: `%APPDATA%\Local\Arduino15\packages\adafruit\hardware\nrf52`
- 3. `cd <SKETCHBOOK>`, where `<SKETCHBOOK>` is your Arduino Sketch folder:
-  * macOS  : `~/Documents/Arduino`
-  * Linux  : `~/Arduino`
-  * Windows: `~/Documents/Arduino`
- 4. Create a folder named `hardware/adafruit`, if it does not exist, and change directories to it
- 5. Clone this repo & its submodules:
-
-   ```
-   git clone https://github.com/adafruit/Adafruit_nRF52_Arduino.git
-   cd Adafruit_nRF52_Arduino
-   git submodule update --init
-   ```
-   
- 6. Restart the Arduino IDE
- 7. Once the BSP is installed, select 'Adafruit Feather nRF52840 Express' from the Tools -> Board menu, which will update your system config to use the right compiler and settings for the nRF52.
 
 ### Adafruit's nrfutil tools
 
@@ -67,29 +29,25 @@ There are two methods that you can use to install this BSP. We highly recommend 
 $ pip3 install adafruit-nrfutil --user
 ```
 
-### Drivers
-
-- [SiLabs CP2104 driver](http://www.silabs.com/products/mcu/pages/usbtouartbridgevcpdrivers.aspx) is required for USB to Serial when using with Feather nRF52832
-
 ## Bootloader
 
 Bootloader can be updated via UF2 file or DFU if already existed. Or flash on new blank chip using following guide
 
-### Update Bootloader with UF2 ( nRF52840 only and require 0.4.0+ )
+### Update Bootloader with UF2
 
-This only works with nRF52840 and require existing bootloader version is at least 0.4.0:
+This require existing bootloader version is at least 0.4.0:
 
-- Quickly doulbe tap reset button to put your board in to bootloader mode. A mass storage device i.e `FTHR840BOOT` will appear
-- Download latest UF2 for your board i.e `update-{BOARD}-{version}_nosd.uf2` from [Adafruit_nRF52_Bootloader release page](https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases)
-- Drap and drop the UF2 file into `FTHR840BOOT` drive to perform update then wait until the board reset.x
+- Quickly double tap reset button to put your board into bootloader mode. A mass storage device i.e `NRF52BOOT` will appear
+- Download latest UF2 for your board i.e `arancino_volante_bootloader_s140_6.1.1.uf2`
+- Drap and drop the UF2 file into `NRF52BOOT` drive to perform update then wait until the board reset.x
 
 ### Update Bootloader with DFU
 
 To upgrade to the latest Bootloader + Softdevice using the serial port within Arduino IDE.
 
-- Select `Tools > Board > Adafruit Feather nRF52840 Express`
-- Select `Tools > Programmer > Bootloader DFU for Bluefruit nRF52`
-- Select `Tools > Burn Bootloader`
+- Select `Tools -> Board -> Arancino nRF52 Board -> Arancino Volante`
+- Select `Tools -> Programmer -> Bootloader DFU for Arancino nRF52`
+- Select `Tools -> Burn Bootloader`
 - **WAIT** until the process complete ~30 seconds
 
 **Note: close the Serial Monitor before you click "Burn Bootloader". Afterwards, you shouldn't close the Arduino IDE, unplug the Feather, launch Serial Monitor etc ... to abort the process. There is a high chance it will brick your device! Do this with care and caution.**
@@ -111,21 +69,13 @@ Check to make sure you can run `nrfjprog` from your terminal/command prompt
 $ ln -s $HOME/prog/nordic/nrfjprog/nrfjprog /usr/local/bin/nrfjprog
 ```
 
-Once the tools above have been installed and added to your system path, from the Arduino IDE:
-
-- Select `Tools > Board > Adafruit Feather nRF52840 Express`
-- Select `Tools > Programmer > J-Link for Feather52`
-- Select `Tools > Burn Bootloader` with the board and J-Link connected
-
-If you wish to modify bootloader to your own need, check out its repo here [Adafruit_nRF52_Bootloader](https://github.com/adafruit/Adafruit_nRF52_Bootloader)
-
 #### Manually Burning the Bootloader via nrfjprog
 
 The bootloader hex file can be found at `bin/bootloader` run the command as follows:
 
 ```
 $ nrfjprog -e -f nrf52
-$ nrfjprog --program feather_nrf52832_bootloader.hex -f nrf52
+$ nrfjprog --program arancino_volante_bootloader_s140_6.1.1.hex -f nrf52
 $ nrfjprog --reset -f nrf52
 ```
 
