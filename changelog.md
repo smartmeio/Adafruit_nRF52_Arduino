@@ -1,10 +1,10 @@
-## v 1.2.0 - 2021.12.XX
-* updating core on stable v1.2.0 release
-* Adafruit TinyUSB library updated to release v1.7.0
 
-## v 1.1.0 - 2021.12.XX
-* updating core on stable v1.1.0 release
-* Adafruit TinyUSB library updated to release v1.4.4
+## v 1.1.0 - 2022.07.XX
+* added reset via ota [#r50afx] (https://app.clickup.com/t/r50afx)
+* removed define baudrate `Arduino.h` [#37pztpm] (https://app.clickup.com/t/37pztpm)
+
+## v 1.0.1 - 2022.07.XX
+* removed task resume and suspend from `rtos.cpp` [#363bt7b] (https://app.clickup.com/t/363bt7b)
 
 ## v 1.0.0 - 2021.09.XX
 
