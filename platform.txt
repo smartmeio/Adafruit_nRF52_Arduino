@@ -40,7 +40,7 @@ compiler.S.cmd=arm-none-eabi-gcc
 compiler.S.flags=-mcpu={build.mcu} -mthumb -mabi=aapcs {compiler.optimization_flag} -g -c {build.float_flags} -x assembler-with-cpp
 
 compiler.cpp.cmd=arm-none-eabi-g++
-compiler.cpp.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.warning_flags} {build.float_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD
+compiler.cpp.flags=-mcpu={build.mcu} -mthumb -c -g {compiler.warning_flags} {build.float_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD {build.arancino_extra_flags}
 compiler.ar.cmd=arm-none-eabi-ar
 compiler.ar.flags=rcs
 compiler.objcopy.cmd=arm-none-eabi-objcopy

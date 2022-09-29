@@ -2,6 +2,7 @@ menu.softdevice=SoftDevice
 menu.usbstack=USB Stack
 menu.debug=Debug
 menu.debug_output=Debug Output
+menu.freertos=Use FreeRTOS
 
 # ----------------------------------
 # Arancino Volante
@@ -36,7 +37,7 @@ arancinoVolante.build.core=nRF5
 arancinoVolante.build.variant=arancino_volante
 arancinoVolante.build.usb_manufacturer="smartme.io"
 arancinoVolante.build.usb_product="Arancino Volante"
-arancinoVolante.build.extra_flags=-DNRF52840_XXAA {build.flags.usb} -DUSEFREERTOS
+arancinoVolante.build.extra_flags=-DNRF52840_XXAA {build.flags.usb}
 arancinoVolante.build.ldscript=nrf52840_s140_v6.ld
 arancinoVolante.build.vid=0x1915
 arancinoVolante.build.pid=0x521F
@@ -70,3 +71,7 @@ arancinoVolante.menu.debug_output.serial1=Serial1
 arancinoVolante.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
 arancinoVolante.menu.debug_output.rtt=Segger RTT
 arancinoVolante.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
+
+# FreeRTOS Menu
+arancinoVolante.menu.freertos.yes=Yes
+arancinoVolante.menu.freertos.yes.build.arancino_extra_flags=-DUSEFREERTOS
