@@ -58,6 +58,7 @@ void const *  lookup_find(lookup_table_t const* p_table, uint32_t key);
 
 const char* getBootloaderVersion(void);
 const char* getMcuUniqueID(void);
+const char* getMacAddr();
 
 #ifdef __cplusplus
 }

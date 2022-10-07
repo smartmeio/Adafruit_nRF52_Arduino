@@ -65,6 +65,7 @@
 #include "services/BLEBeacon.h"
 #include "services/BLEHidGeneric.h"
 #include "services/BLEHidAdafruit.h"
+#include "services/BLEHidGamepad.h"
 #include "services/BLEMidi.h"
 #include "services/EddyStone.h"
 
@@ -163,6 +164,7 @@ class AdafruitBluefruit
     uint8_t  connected         (void); // Number of connected
     bool     connected         (uint16_t conn_hdl);
 
+    uint8_t  getConnectedHandles(uint16_t* hdl_list, uint8_t max_count);
     uint16_t connHandle        (void);
 
     // Alias to BLEConnection API()

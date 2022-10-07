@@ -78,6 +78,7 @@ void yield(void)
   TinyUSB_Device_FlushCDC();
 #endif
   taskYIELD();
+
 }
 
 void vApplicationStackOverflowHook( TaskHandle_t xTask, char *pcTaskName )

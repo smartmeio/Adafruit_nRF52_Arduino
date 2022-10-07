@@ -88,6 +88,11 @@ void resumeLoop(void);
 #ifndef MCU_FAMILY
 #define MCU_FAMILY "NRF52"
 #endif
+//Arancino library defines #23n7ujc
+//#define BAUDRATE 256000
+#define TIMEOUT 10000
+#define SERIAL_PORT Serial
+#define SERIAL_DEBUG Serial1
 
 // undefine stdlib's abs if encountered
 #ifdef abs
