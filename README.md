@@ -1,22 +1,20 @@
 # Arduino Core for Arancino nRF52 Boards
+![Release](https://img.shields.io/github/v/release/smartmeio/arancino-core-nrf52?style=plastic)
 
-Following board are included:
+This core is a fork of the [Adafruit nRF52 Arduino](https://github.com/adafruit/Adafruit_nRF52_Arduino) core modified to support the functionality of the Arancino architecture.
 
-- [Arancino Volante](https://arancino.cc)
+# Supported Boards
+* Arancino Volante
 
-## BSP Installation
+## Installation on Arduino IDE
 
-There are two methods that you can use to install this BSP. We highly recommend the first option unless you wish to participate in active development of this codebase via Github.
+This core is available as a package in the Arduino IDE cores manager. If you want to install it:
 
-### Arancino nRF52 BSP via the Arduino Board Manager
-
- 1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software)
- 2. Start the Arduino IDE
- 3. Go into Preferences
- 4. Add https://git.smartme.io/smartme.io/arancino/arduino/smartmeio-package-index/raw/dev/package_smartmeio_index.json as an 'Additional Board Manager URL'
- 5. Open the Boards Manager from the Tools -> Board -> Board Manager menu and install 'Arancino nRF52 Boards'
- 6. Once the BSP is installed, select 'Arancino Volante' from the Tools -> Board -> Arancino nRF52 Boards menu, which will update your system config to use the right compiler and settings for the nRF52.
-
+  1. Open the **Preferences** of the Arduino IDE.
+  2. Add this URL `https://raw.githubusercontent.com/smartmeio/arancino-boards/master/package_smartmeio_index.json` in the **Additional Boards Manager URLs** field, and click OK.
+  3. Open the **Boards Manager** (menu `Tools` -> `Board` -> `Board Manager...`)
+  4. Install **Arancino nRF52 Boards**
+  5. Select one of the boards under **Arancino nRF52 Boards** in `Tools` -> `Board` menu
 
 ### Adafruit's nrfutil tools
 
@@ -29,7 +27,40 @@ There are two methods that you can use to install this BSP. We highly recommend 
 $ pip3 install adafruit-nrfutil --user
 ```
 
-## Bootloader
+## Installation on PlatformIO and Visual Studio Code
+To create a project with Visual Studio Code and PlatformIO it is necessary to initially create a project for `Nordic nRF52-DK` and then modify the `platformio.ini` file in order to point to the Arancino packages. The `platformio.ini` file must be modififed in order to contains this configuration:
+```
+[env:arancino_volante]
+platform = https://github.com/smartmeio/platform-nordicnrf52.git#9.4.0-arancino
+board = arancino_volante
+framework = arduino
+platform_packages = smartme-io/framework-arduinoarancinonrf52@https://git.smartme.io/smartme.io/arancino/ide/arancino-nrf52-core.git
+upload_port = ...
+```
+Any used library (e.g. Arancino library) must be included under the `lib` folder, so the project structure should look like:
+```
+include
+lib
++-- your_library
+     +-- examples
+     +-- include
+     +-- keywords.txt
+     +-- library.json
+     +-- src
+src
++-- main.cpp
+test
+```
+
+Alternatively, you can set an extra directory in which to search for libraries. For example, if you want to include all the libraries installed in the Arduino IDE, you can specify it adding this lines to the `platformio.ini` configuration file:
+```
+lib_extra_dirs = ~/Arduino/libraries
+```
+
+# Enabling FreeRTOS support
+In nRF52-based boards FreeRTOS is enabled by default and cannot be disabled.
+
+# Bootloader
 
 Bootloader can be updated via UF2 file or DFU if already existed. Or flash on new blank chip using following guide
 
