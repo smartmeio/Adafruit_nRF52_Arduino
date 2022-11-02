@@ -35,9 +35,10 @@ platform = https://github.com/smartmeio/platform-nordicnrf52.git#9.4.0-arancino
 board = arancino_volante
 framework = arduino
 platform_packages = smartme-io/framework-arduinoarancinonrf52@https://git.smartme.io/smartme.io/arancino/ide/arancino-nrf52-core.git
+lib_deps = https://github.com/smartmeio/arancino-library
 upload_port = ...
 ```
-Any used library (e.g. Arancino library) must be included under the `lib` folder, so the project structure should look like:
+Any other used library must be included as dependency through `lib_deps` (as for the Arancino library) or saved under the `lib` folder; in the latter case the project structure should look like:
 ```
 include
 lib
