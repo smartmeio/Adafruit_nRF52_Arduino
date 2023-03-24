@@ -1,3 +1,6 @@
+## v 1.1.1 - 2023.03.DD
+* Add StreamUtils Library [#863gap62r](https://app.clickup.com/t/863gap62r)
+
 ## v 1.1.0 - 2022.10.7
 * Alignment with upstream version [1.3.0 #d75bb2a] (https://github.com/adafruit/Adafruit_nRF52_Arduino/tree/d75bb2a8524e7f00f725eb2ab27a8996be65e7a3)
 * Added reset via ota [#r50afx](https://app.clickup.com/t/r50afx)
