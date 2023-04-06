@@ -34,7 +34,7 @@ To create a project with Visual Studio Code and PlatformIO it is necessary to in
 platform = https://github.com/smartmeio/platform-nordicnrf52.git#9.4.0-arancino
 board = arancino_volante
 framework = arduino
-platform_packages = smartme-io/framework-arduinoarancinonrf52@https://git.smartme.io/smartme.io/arancino/ide/arancino-nrf52-core.git
+platform_packages = smartme-io/framework-arduinoarancinonrf52@https://github.com/smartmeio/arancino-core-nrf52.git
 lib_deps = https://github.com/smartmeio/arancino-library
 upload_port = ...
 ```
