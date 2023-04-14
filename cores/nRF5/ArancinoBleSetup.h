@@ -1,3 +1,6 @@
+#ifndef ArancinoBleSetup_h
+#define ArancinoBleSetup_h
+
 #include <bluefruit.h>
 
 //All UUIDs are dummy
@@ -85,3 +88,5 @@ void ArancinoBleSetup(BLEUart& bleuart, BLEDis& bledis, BLEDfu& bledfu){
   startAdv(bleuart);
 
 }
+
+#endif
